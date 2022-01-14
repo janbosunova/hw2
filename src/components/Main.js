@@ -1,15 +1,18 @@
 import './Main.css'
+import Name from './name/Name'
+import Price from './price/Price'
+import Foto from './foto/Foto'
 function Main(props) {
 	const arr = props.data
 	return (
 		<div className='all'>
 			{arr.map((el, id) => {
 				return (
-					<div className='burger'>
-						<img className='img' src={el.img} />
+					<div key={id} className='burger'>
+						<Foto img = {el.img}/>
 
-						<div className='text'> {el.text}</div>
-						<div className='price'>{el.price}$</div>
+						<Name  text={el.text}/>
+						<Price  price = {el.price}$ />
 					</div>
 				)
 			})}
